@@ -56,9 +56,17 @@ def fetch_youtube_link(playlist):
     video_urls = get_playlist_links(playlist)
     output = []
     for u in video_urls:
-        print('creating yt object %s ' % u)
-        yt = pytube.YouTube(u)
-        output.append(yt.streams.filter(progressive=True, mime_type='video/mp4').order_by('resolution').desc().first())
+        try:
+            print('creating yt object %s ' % u)
+            yt = pytube.YouTube(u)
+            output.append(yt.streams.filter(progressive=True, mime_type='video/mp4').order_by('resolution').desc().first())
+            pass
+        except pytube.AgeRestrictionError as e:
+            print('exception raised during getting %s ' % u)
+        except Exception as e:
+            raise e
+        else:
+            pass
     return output
 
 
