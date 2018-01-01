@@ -37,6 +37,7 @@ playlists = [
 
 
 def get_playlist_links(playlist_url):
+    """get the playlist links"""
     page_elements = urlopen(playlist_url).readlines()
 
     page_elements = [temp.decode('utf-8') for temp in page_elements]
