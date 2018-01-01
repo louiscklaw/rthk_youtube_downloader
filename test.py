@@ -30,7 +30,8 @@ playlists = [
     ('香港歷史系列', 'PL1396B172772C478A'),
     ('天人合一', 'PLuwJy35eAVaJLkfXBGaplXAGWRk5JV8gr'),
     ('RTHK-香港故事', 'PLU18ugb4GweMOJBW_PdjjlHiPa-Z9IFOi'),
-    ('香港歷史系例', 'PLFlwfOGHoMCraMmNjQM57RwM_Ruje6NQY')
+    ('香港歷史系例', 'PLFlwfOGHoMCraMmNjQM57RwM_Ruje6NQY'),
+    ('戰火無情', 'PLVbwECSBScsMBt8cIkMR1QMbvxRlGy_iy')
 ]
 
 
