@@ -73,7 +73,7 @@ def fetch_youtube_link(playlist):
 def download_youtube(yts):
     for yt in yts:
         print('downloading')
-        yt.download(output_path='download')
+        yt.download(output_path='%s/download' % CWD)
 
 
 def download_all(youtube_lists):
