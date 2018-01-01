@@ -5,32 +5,25 @@ import sys
 import traceback
 from pprint import pprint
 
-from fabric.api import cd, local, task, lcd, settings
+from fabric.api import cd, local, task, lcd, settings, env, run
 
 CWD = os.path.dirname(os.path.abspath(__file__))
 DOC_DIR = os.path.sep.join([CWD,'docs'])
 
 
-def gen_doc():
-    with settings(warn_only=True):
-        local('mkdir docs')
+env.hosts=['192.168.88.6']
+env.user='logic'
 
-    SPHINE_QUICISTART_PARAMS=[
-        '-q -a louis -v 1'
-        '--ext-autodoc',
-        '--dot=.',
-        '--project=youtube_rthk_downloader',
-        '--sep'
-    ]
+def get_current_branch_name():
+    temp = local("git branch | sed -n '/\* /s///p'", capture=True)
+    return temp.strip()
 
-    with lcd(DOC_DIR):
-        local('sphinx-quickstart %s' % ' '.join(SPHINE_QUICISTART_PARAMS))
-        local('make html')
-
-def del_doc():
-    local('rm -rf %s' % DOC_DIR)
-
-def regen_doc():
-    with settings(warn_only=True):
-        del_doc()
-        gen_doc()
+def test_download():
+    local('git push')
+    current_branch = get_current_branch_name()
+    with cd('/mnt/backup/tmp/rthk_youtube_downloader'):
+        run('git reset --hard %s' % current_branch)
+        run('git pull')
+        run('pipenv --three')
+        run('pipenv update')
+        run('pipenv shell python3 test.py')

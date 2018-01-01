@@ -32,6 +32,7 @@ playlists = [
     ('天人合一', 'PLuwJy35eAVaJLkfXBGaplXAGWRk5JV8gr'),
     ('RTHK-香港故事', 'PLU18ugb4GweMOJBW_PdjjlHiPa-Z9IFOi'),
     ('香港歷史系例', 'PLFlwfOGHoMCraMmNjQM57RwM_Ruje6NQY'),
+    ('長片','PL106E1D13834F287B'),
     ('戰火無情', 'PLVbwECSBScsMBt8cIkMR1QMbvxRlGy_iy')
 ]
 
@@ -56,16 +57,24 @@ def fetch_youtube_link(playlist):
     video_urls = get_playlist_links(playlist)
     output = []
     for u in video_urls:
-        print('creating yt object %s ' % u)
-        yt = pytube.YouTube(u)
-        output.append(yt.streams.filter(progressive=True).first())
+        try:
+            print('creating yt object %s ' % u)
+            yt = pytube.YouTube(u)
+            output.append(yt.streams.filter(progressive=True, mime_type='video/mp4').order_by('resolution').desc().first())
+            pass
+        except pytube.exceptions.AgeRestrictionError as e:
+            print('exception raised during getting %s ' % u)
+        except Exception as e:
+            raise e
+        else:
+            pass
     return output
 
 
 def download_youtube(yts):
     for yt in yts:
         print('downloading')
-        yt.download()
+        yt.download(output_path='%s/download' % CWD)
 
 
 def download_all(youtube_lists):
