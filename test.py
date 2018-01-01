@@ -19,19 +19,20 @@ playlist_beginning = 'https://www.youtube.com/playlist?list='
 
 
 playlists = [
-    # ('地下秩序', 'PLuwJy35eAVaL18Lg87FfKet-j7KDlqhqQ'),
-    # ('街角有樂', 'PLuwJy35eAVaJ_wKgvppYyxD-nXpHTtR9o'),
-    # ('文化長河－古都行', 'PLuwJy35eAVaIxgNAYL3YMzYhI5wIsSZmt'),
-    # ('香港故事-自遊香港', 'PLuwJy35eAVaL7ssLU1FA8zuLP3Sv94gYd'),
-    # ('香港歷史系列 III', 'PLuwJy35eAVaKpGWWgEPNK_-dDLlN8n-1J'),
-    # ('山水搜記', 'PLuwJy35eAVaIkcvGxeQh7-gN_SNF5uxOZ'),
-    # ('山水傳奇', 'PLuwJy35eAVaInrY8jNDhWZMDfjYysi2Rl'),
-    # ('文化長河-大地行', 'PLuwJy35eAVaKb9cptymdxqQHTVbKvgZbL'),
-    # ('我們的科學家', 'PLuwJy35eAVaJD-ze9wRgtBAoQzhabo5Vl'),
-    # ('香港歷史系列', 'PL1396B172772C478A'),
-    # ('天人合一', 'PLuwJy35eAVaJLkfXBGaplXAGWRk5JV8gr'),
-    # ('RTHK-香港故事', 'PLU18ugb4GweMOJBW_PdjjlHiPa-Z9IFOi'),
-    # ('香港歷史系例', 'PLFlwfOGHoMCraMmNjQM57RwM_Ruje6NQY'),
+    ('地下秩序', 'PLuwJy35eAVaL18Lg87FfKet-j7KDlqhqQ'),
+    ('街角有樂', 'PLuwJy35eAVaJ_wKgvppYyxD-nXpHTtR9o'),
+    ('文化長河－古都行', 'PLuwJy35eAVaIxgNAYL3YMzYhI5wIsSZmt'),
+    ('香港故事-自遊香港', 'PLuwJy35eAVaL7ssLU1FA8zuLP3Sv94gYd'),
+    ('香港歷史系列 III', 'PLuwJy35eAVaKpGWWgEPNK_-dDLlN8n-1J'),
+    ('山水搜記', 'PLuwJy35eAVaIkcvGxeQh7-gN_SNF5uxOZ'),
+    ('山水傳奇', 'PLuwJy35eAVaInrY8jNDhWZMDfjYysi2Rl'),
+    ('文化長河-大地行', 'PLuwJy35eAVaKb9cptymdxqQHTVbKvgZbL'),
+    ('我們的科學家', 'PLuwJy35eAVaJD-ze9wRgtBAoQzhabo5Vl'),
+    ('香港歷史系列', 'PL1396B172772C478A'),
+    ('天人合一', 'PLuwJy35eAVaJLkfXBGaplXAGWRk5JV8gr'),
+    ('RTHK-香港故事', 'PLU18ugb4GweMOJBW_PdjjlHiPa-Z9IFOi'),
+    ('香港歷史系例', 'PLFlwfOGHoMCraMmNjQM57RwM_Ruje6NQY'),
+    ('長片','PL106E1D13834F287B'),
     ('戰火無情', 'PLVbwECSBScsMBt8cIkMR1QMbvxRlGy_iy')
 ]
 
