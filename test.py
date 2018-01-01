@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 
-import os, sys
+import os
+import sys
 import pytube
 from urllib.request import urlopen
 
@@ -13,8 +14,8 @@ YT_DOWNLOAD_PATH = os.path.sep.join([
     CWD, 'download'
 ])
 
-playlist_beginning = 'https://www.youtube.com/playlist?list='
 
+playlist_beginning = 'https://www.youtube.com/playlist?list='
 
 
 playlists = [
@@ -41,10 +42,13 @@ def get_playlist_links(playlist_url):
     page_elements = [temp.decode('utf-8') for temp in page_elements]
     # pprint(page_elements)
 
-    video_elements = [el for el in page_elements if 'pl-video-title-link' in el]  # Filter out unnecessary lines
-    video_urls = [v.split('href="',1)[1].split('" ',1)[0] for v in video_elements]  # Grab the video urls from the elements
+    # Filter out unnecessary lines
+    video_elements = [
+        el for el in page_elements if 'pl-video-title-link' in el]
+    # Grab the video urls from the elements
+    video_urls = [v.split('href="', 1)[1].split('" ', 1)[0]
+                  for v in video_elements]
     return ['http://www.youtube.com' + v for v in video_urls]
-
 
 
 def fetch_youtube_link(playlist):
@@ -55,6 +59,7 @@ def fetch_youtube_link(playlist):
         yt = pytube.YouTube(u)
         output.append(yt.streams.filter(progressive=True).first())
     return output
+
 
 def download_youtube(yts):
     for yt in yts:
