@@ -61,7 +61,7 @@ def fetch_youtube_link(playlist):
             yt = pytube.YouTube(u)
             output.append(yt.streams.filter(progressive=True, mime_type='video/mp4').order_by('resolution').desc().first())
             pass
-        except pytube.AgeRestrictionError as e:
+        except pytube.exceptions.AgeRestrictionError as e:
             print('exception raised during getting %s ' % u)
         except Exception as e:
             raise e
